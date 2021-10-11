@@ -1,5 +1,13 @@
 const arr1 = [1, 5, 8, 11, 15];
 const arr2 = [0, 3, 9, 14, 19, 20];
+const theArr = [9, 6, 3, 0, 12, 45, 4];
+const MergeSort = (arr) => {
+	if (arr.length <= 1) return arr;
+	let mid = Math.floor(arr.length / 2);
+	let left = MergeSort(arr.slice(0, mid));
+	let right = MergeSort(arr.slice(mid));
+	return MargeArray(left, right);
+};
 
 const MargeArray = (arr1, arr2) => {
 	let i = 0,
@@ -29,4 +37,5 @@ const MargeArray = (arr1, arr2) => {
 	return newArr;
 };
 
-console.log(MargeArray(arr1, arr2));
+// console.log(MargeArray(arr1, arr2));
+console.log(MergeSort(theArr));
